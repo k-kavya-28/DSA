@@ -1,25 +1,28 @@
 #include<iostream>
 #include<climits>
+// #include<algorithm>
 using namespace std;
 
 int getMin(int array[], int size){
-    int min = INT_MAX;
+    int mini = INT_MAX;
     for(int i=0; i<size; i++){
-        if(array[i]<min){
-            min=array[i];
-        }
+        // if(array[i]<min){
+        //     min=array[i];
+        // }
+        mini=min(mini,array[i]);
     }
-    return min;
+    return mini;
 }
 
 int getMax(int array[], int size){
-    int max = INT_MIN;
+    int maxi = INT_MIN;
     for(int i=0; i<size; i++){
-        if(array[i]>max){
-            max=array[i];
-        }
+        // if(array[i]>max){
+        //     max=array[i];
+        // }
+        maxi=max(maxi,array[i]);
     }
-    return max;
+    return maxi;
 }
 
 int main()
