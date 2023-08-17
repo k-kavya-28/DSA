@@ -6,3 +6,5 @@ int findUnique(int *arr, int size)
     }
     return ans;
 }
+
+//coding ninjas
