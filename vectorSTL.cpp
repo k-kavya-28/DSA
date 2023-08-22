@@ -39,5 +39,19 @@ int main()
     cout<<"after clear size->"<<v.size()<<endl;
     cout<<"after clear capacity->"<<v.capacity()<<endl;
 
+    vector<int> b(5,1);
+    //all initialised to 1
+    cout<<"vector b->"<<endl;
+    for(int i:b){
+        cout<<i<<" ";
+    }cout<<endl;
+
+    vector<int> c(b);
+    //b vector copied into c vector
+    cout<<"vector c->"<<endl;
+    for(int i:c){
+        cout<<i<<" ";
+    }cout<<endl;
+
     return 0;
 }
