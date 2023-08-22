@@ -33,5 +33,11 @@ int main()
         cout<<i<<" ";
     }cout<<endl;
 
+    cout<<"before clear size->"<<v.size()<<endl;
+    cout<<"before clear capacity->"<<v.capacity()<<endl;
+    v.clear();
+    cout<<"after clear size->"<<v.size()<<endl;
+    cout<<"after clear capacity->"<<v.capacity()<<endl;
+
     return 0;
 }
