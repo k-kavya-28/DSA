@@ -15,11 +15,11 @@ private:
             return temp;
         }
     }
-    bool checkPalindrome(string s){
+    bool checkPalindrome(string a){
         int st=0;
-        int e=s.length()-1;
-        while(st<e){
-            if(s[st]!=s[e]){
+        int e=a.length()-1;
+        while(st<=e){
+            if(a[st]!=a[e]){
                 return 0;
             }
             else{
@@ -35,14 +35,14 @@ public:
     bool isPalindrome(string s) {
         string temp="";
         //faltu character removing
-        for(int j=0; j<s.length()-1; j++){
+        for(int j=0; j<s.length(); j++){
             if (valid(s[j])){
                 temp.push_back(s[j]);
             }
         }
 
         //toLower
-        for(int j=0; j<s.length()-1; j++){
+        for(int j=0; j<temp.length(); j++){
             temp[j]=toLower(temp[j]);
             }
         //checking palindrome
