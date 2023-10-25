@@ -15,3 +15,8 @@ string replaceSpaces(string &str){
 	}
 	return temp;
 }
+
+//TC->O(n)
+//SC->O(n)
+
+//HW-> do in O(1) i.e. in-place
