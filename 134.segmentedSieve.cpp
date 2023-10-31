@@ -11,7 +11,7 @@ void sieve(int n) {
         isPrime[0] = isPrime[1] = false;
         for(long long int i=2; i<n; i++){
             if(isPrime[i]){
-                isPrime.push_back(i);
+                prime.push_back(i);
 
                 for(long long int j=i*i; j<=n; j=j+i){   // replace 2*i with i*i this will optimise . write down and see the i*i is say 25 then for i=5 15,20 etc will already have smaller divisors 
                     isPrime[j]=false;
