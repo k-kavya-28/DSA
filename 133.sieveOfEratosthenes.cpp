@@ -8,7 +8,7 @@ public:
             if(prime[i]){
                 cnt++;
 
-                for(int j=2*i; j<n; j=j+i){
+                for(int j=2*i; j<n; j=j+i){   // replace 2*i with i*i this will optimise . write down and see the i*i is say 25 then for i=5 15,20 etc will already have smaller divisors 
                     prime[j]=false;
                 }
             }
