@@ -9,7 +9,11 @@ int main()
     int *p=0;
     //it will give segmentation fault means no such memory exist
 
-
+    int i=2;
+    int *p = &i;
+    //or int *p = 0;
+    //   p=&i;
+    // both are same
 
  return 0;
 }
