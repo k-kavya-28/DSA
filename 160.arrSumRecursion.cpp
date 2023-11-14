@@ -3,6 +3,9 @@ using namespace std;
 
 int sum(int arr[], int size){
     //base
+    if(size==0){
+        return 0;
+    }
     if(size==1){
         return arr[0];
     }
