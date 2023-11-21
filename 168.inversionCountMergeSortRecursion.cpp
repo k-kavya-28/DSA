@@ -49,7 +49,7 @@ int merge(int* arr, int s, int e){
 int mergeSort(int* arr, int s, int e){
     int inv_count=0;
     //base case
-    if(s>=e){
+    if(s>=e){              //means if 0 element or 1 element then it's already sorted
         return 0;
     }
 
