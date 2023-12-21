@@ -2,7 +2,9 @@ void solve(string str, string output, int index, vector<string>& ans){
 
     //base case
     if(index>=str.length()){
-        ans.push_back(output);
+        if(output.length()>0){  //empty not allowed
+            ans.push_back(output);
+        }
         return ;
     }
 
