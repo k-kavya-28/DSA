@@ -35,12 +35,12 @@ class Hero{
 
 int main()
 {
-    Hero h1;
-    h1.health = 100;
+    // Hero h1;
+    // h1.health = 100;
     // h1.level = 'D';
     //cout<<sizeof(h1)<<endl;
-    cout<<"Health: "<<h1.health<<endl;
-    h1.setLevel('F');
-    cout<<"Level: "<<h1.getLevel()<<endl;
+    // cout<<"Health: "<<h1.health<<endl;
+    // h1.setLevel('F');
+    // cout<<"Level: "<<h1.getLevel()<<endl;
     return 0;
 }
