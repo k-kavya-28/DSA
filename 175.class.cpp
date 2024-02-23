@@ -80,6 +80,12 @@ class Hero{
     ~Hero(){
         cout<<"Destructor called"<<endl;
     }
+
+    static int random(){
+        //cout<<this->health<<endl;     //will give error as 'this' toh hota hi ni static function me due to no object creation
+        //cout<<health<<endl;     //can't access non-static member, similaryly won't be able to access level and name as well
+        return timeToComplete;
+    }
 };
 
 int Hero::timeToComplete = 15;
@@ -87,13 +93,14 @@ int Hero::timeToComplete = 15;
 int main()
 {
     //7 
-    cout<<"time to complete: "<<Hero::timeToComplete<<endl;
-    Hero Ultron;
-    cout<<"timeToComplete: "<<Ultron.timeToComplete<<endl;  //this object creation is not recommended as static member belongs to class
-    Hero Hawkie;
-    Hawkie.timeToComplete=20;
-    cout<<"Hawkie time to complete: "<<Hawkie.timeToComplete<<endl;
-    cout<<"Ultron time to complete: "<<Ultron.timeToComplete<<endl;
+    // cout<<"time to complete: "<<Hero::timeToComplete<<endl;
+    cout<<"random function printing time to complete value: "<<Hero::random()<<endl;
+    // Hero Ultron;
+    // cout<<"timeToComplete: "<<Ultron.timeToComplete<<endl;  //this object creation is not recommended as static member belongs to class
+    // Hero Hawkie;
+    // Hawkie.timeToComplete=20;
+    // cout<<"Hawkie time to complete: "<<Hawkie.timeToComplete<<endl;
+    // cout<<"Ultron time to complete: "<<Ultron.timeToComplete<<endl;
     //we see that time to complete for both gets updated so this is not recommended better use without object creation
 
 
