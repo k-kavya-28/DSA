@@ -11,9 +11,14 @@ class B{
     }
 
     void operator+(B &obj){
-        int value1 = this->a;
-        int value2 = obj.a;
-        cout<<value2 - value1<<endl;
+        // int value1 = this->a;
+        // int value2 = obj.a;
+        // cout<<value2 - value1<<endl;
+        cout<<"HELLO MOTO "<<endl;
+    }
+
+    void operator() (){
+        cout<<"main bracket hun "<<this->a<<endl;
     }
 };
 
@@ -23,4 +28,5 @@ int main()
     obj1.a = 4;
     obj2.a = 7;
     obj1 + obj2;
+    obj1();
 }
