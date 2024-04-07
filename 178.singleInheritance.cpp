@@ -16,9 +16,15 @@ class dog: public animal{
 
 };
 
+class germanshephard : public dog{
+
+};
+
 int main()
 {
-    dog d;
-    d.speak();
+    // dog d;
+    // d.speak();
+    germanshephard g;
+    g.speak();
     return 0;
 }
