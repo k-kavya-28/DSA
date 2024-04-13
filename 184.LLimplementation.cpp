@@ -13,6 +13,10 @@ class Node{
     }
 };
 
+void insertAtHead() {
+    
+}
+
 int main()
 {   
     Node* node1 = new Node(10);
