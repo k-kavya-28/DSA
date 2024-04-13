@@ -23,9 +23,12 @@ void insertAtHead(Node* &head, int d) {
 
 void insertAtTail(Node* &tail, int d){
     Node* temp = new Node(d);
-    tail->next = temp;
-    tail = 
-    temp-> next = NULL;
+    tail -> next = temp;
+    tail = temp;
+}
+
+void insertAtPosition(int pos, int d){
+    
 }
 
 void print(Node* &head){
@@ -51,9 +54,14 @@ int main()
     Node* head = node1;
     Node* tail = node1; //tail is just like head also, since till now only one node is there so head and tail are same
     print(head);
-    insertAtHead(head, 12);
+    // insertAtHead(head, 12);
+    // print(head);
+    // insertAtHead(head, 15);
+    // print(head);
+
+    insertAtTail(tail, 12);
     print(head);
-    insertAtHead(head, 15);
+    insertAtTail(tail, 15);
     print(head);
     return 0;
 }
