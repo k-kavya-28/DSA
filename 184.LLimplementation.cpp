@@ -27,9 +27,31 @@ void insertAtTail(Node* &tail, int d){
     tail = temp;
 }
 
-void insertAtPosition(int pos, int d){
+// isme kuch error hai
+// void insertAtPosition(Node* &head,Node* &tail,int pos, int d){
+//     if(pos == 1){
+//         insertAtHead(head, d);
+//         return;
+//     }
+//     Node* temp = head;
+//     int cnt = 1;
+//     while(cnt < pos-1){
+//         temp = temp ->next;
+//         cnt++;
+//     }
+
+//     if(temp->next == NULL){
+//         insertAtTail(tail, d);
+//         return;
+//     }
+
+//     //creating new node
+//     Node* nodeToInsert = new Node(d);
+//     nodeToInsert -> next = temp -> next;
+//     temp ->  next = nodeToInsert;
+
     
-}
+// }
 
 void print(Node* &head){
     //using temp because real LL ko nahi chhedna
@@ -59,9 +81,14 @@ int main()
     // insertAtHead(head, 15);
     // print(head);
 
-    insertAtTail(tail, 12);
-    print(head);
-    insertAtTail(tail, 15);
-    print(head);
+    // insertAtTail(tail, 12);
+    // print(head);
+    // insertAtTail(tail, 15);
+    // print(head);
+
+    // insertAtPosition(head,tail,4, 22);
+    // print(head);
+    cout << "head "<< head->data <<endl;
+    cout<< "tail "<<tail-> data <<endl;
     return 0;
 }
