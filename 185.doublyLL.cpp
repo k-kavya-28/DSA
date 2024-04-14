@@ -188,6 +188,12 @@ int main()
     cout<<"head: "<<head->data<<endl;
     cout<<"tail: "<<tail->data<<endl;
     
+    deleteNode(head, tail, 2);
+    print(head);
+    cout<<"Length: "<<getLength(head)<<endl;
+    cout<<"head: "<<head->data<<endl;
+    cout<<"tail: "<<tail->data<<endl;
+    
 
     return 0;
 }
