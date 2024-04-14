@@ -148,21 +148,45 @@ int main()
 
     insertAtHead(head,tail, 13);
     print(head);
+    cout<<"Length: "<<getLength(head)<<endl;
+    cout<<"head: "<<head->data<<endl;
+    cout<<"tail: "<<tail->data<<endl;
 
     insertAtHead(head,tail, 8);
     print(head);
+    cout<<"Length: "<<getLength(head)<<endl;
+    cout<<"head: "<<head->data<<endl;
+    cout<<"tail: "<<tail->data<<endl;
 
     insertAtTail(head,tail, 20);
     print(head);
+    cout<<"Length: "<<getLength(head)<<endl;
+    cout<<"head: "<<head->data<<endl;
+    cout<<"tail: "<<tail->data<<endl;
 
     insertAtPosition(head, tail, 2, 100);
     print(head);
+    cout<<"Length: "<<getLength(head)<<endl;
+    cout<<"head: "<<head->data<<endl;
+    cout<<"tail: "<<tail->data<<endl;
     
     insertAtPosition(head, tail, 1, 101);
     print(head);
+    cout<<"Length: "<<getLength(head)<<endl;
+    cout<<"head: "<<head->data<<endl;
+    cout<<"tail: "<<tail->data<<endl;
     
     insertAtPosition(head, tail, 7, 108);
     print(head);
+    cout<<"Length: "<<getLength(head)<<endl;
+    cout<<"head: "<<head->data<<endl;
+    cout<<"tail: "<<tail->data<<endl;
+
+    deleteNode(head, tail, 1);
+    print(head);
+    cout<<"Length: "<<getLength(head)<<endl;
+    cout<<"head: "<<head->data<<endl;
+    cout<<"tail: "<<tail->data<<endl;
     
 
     return 0;
