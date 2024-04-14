@@ -24,7 +24,53 @@ class Node{
     }
 };
 
+void insertNode(Node* &tail, int element, int d){
+    if(tail==NULL){
+        //empty list
+        Node* newNode = new Node(d);
+        tail = newNode;
+        newNode->next = newNode;
+    }
+    else{
+        //non-empty list
+        //assuming that the element is present in the list
+        Node* curr = tail; //head toh hai nahi
+        while(curr->data != element){
+            curr = curr->next;
+        }
+        //element is found by now and curr is representing that node
+        Node* temp = new Node(d);
+        temp->next = curr->next;    //ye line pehle likhni hai
+        curr->next = temp;          //ye line second me likhni hai
+    }
+}
+
+void print(Node* tail){
+    Node* temp = tail;
+    do{
+        cout<<tail->data<<" ";
+        tail = tail->next;
+    }while(tail != temp);
+    cout<<endl;
+}
+
 int main()
 {
- return 0;
+    Node* tail = NULL;
+    //5 element will be searched but hai hi ni toh doesn't matter, it'll insert as per the code
+    insertNode(tail, 5, 3);  
+    print(tail);
+    insertNode(tail, 3, 5);
+    print(tail);
+    insertNode(tail, 5, 7);
+    print(tail);
+    insertNode(tail, 7, 9);
+    print(tail);
+    insertNode(tail, 5, 6);
+    print(tail);
+    insertNode(tail, 9, 10);
+    print(tail);
+    insertNode(tail, 3, 4);
+    print(tail);
+    return 0;
 }
