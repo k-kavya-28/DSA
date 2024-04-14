@@ -193,6 +193,12 @@ int main()
     cout<<"Length: "<<getLength(head)<<endl;
     cout<<"head: "<<head->data<<endl;
     cout<<"tail: "<<tail->data<<endl;
+
+    deleteNode(head, tail, 5);
+    print(head);
+    cout<<"Length: "<<getLength(head)<<endl;
+    cout<<"head: "<<head->data<<endl;
+    cout<<"tail: "<<tail->data<<endl;   //giving some garbage value - handle HW (singly+doubly)
     
 
     return 0;
