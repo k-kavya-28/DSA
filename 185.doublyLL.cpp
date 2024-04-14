@@ -91,6 +91,33 @@ void insertAtPosition(Node* &head, Node* &tail, int position, int d){
     nodeToInsert -> prev = temp;
 }
 
+void deleteNode(Node* &head,Node* &tail, int position){
+    if(position == 1){
+        //deleting first node
+        Node* temp = head;
+        temp -> next -> prev = NULL;
+        head = temp->next;
+        temp -> next = NULL;
+        delete temp;    //have to write destructor
+    }
+    else{
+        //deleting middle or last node
+        Node* curr = head;
+        Node* prev = NULL;
+        Node* next = NULL;
+        
+        int cnt = 1;
+        while(cnt < position){
+            prev = curr;
+            curr = curr -> next;
+            cnt++;
+        }
+        prev -> next = curr -> next;
+        curr -> next = NULL;    // delete krne se pehle apne data se pointer hata diya
+        delete curr;
+    }
+}
+
 int main()
 {
     //Node* node1 = new Node(10);   //i.e. if the list is empty
