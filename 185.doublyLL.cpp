@@ -13,6 +13,16 @@ class Node{
         this->prev = NULL;
         this->next = NULL;
     }
+
+    //destructor
+    ~Node(){
+        int value = this-> data;
+        //memory free
+        if(this->next != NULL){
+            delete next;
+        }
+        cout<<"memory is free for node with data "<<value<<endl;
+    }
 };
 
 //imp - traversal of Linked List(doubly)
@@ -104,7 +114,6 @@ void deleteNode(Node* &head,Node* &tail, int position){
         //deleting middle or last node
         Node* curr = head;
         Node* prev = NULL;
-        Node* next = NULL;
         
         int cnt = 1;
         while(cnt < position){
@@ -112,8 +121,9 @@ void deleteNode(Node* &head,Node* &tail, int position){
             curr = curr -> next;
             cnt++;
         }
-        prev -> next = curr -> next;
-        curr -> next = NULL;    // delete krne se pehle apne data se pointer hata diya
+        curr->prev = NULL;
+        prev->next = curr->next;
+        curr->next = NULL;
         delete curr;
     }
 }
@@ -132,7 +142,9 @@ int main()
 
     insertAtHead(head,tail, 11);
     print(head);
-    //cout<<"Length: "<<getLength(head)<<endl;
+    cout<<"Length: "<<getLength(head)<<endl;
+    cout<<"head: "<<head->data<<endl;
+    cout<<"tail: "<<tail->data<<endl;
 
     insertAtHead(head,tail, 13);
     print(head);
