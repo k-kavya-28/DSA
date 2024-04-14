@@ -46,6 +46,12 @@ void insertNode(Node* &tail, int element, int d){
 }
 
 void print(Node* &tail){
+    //handling empty list
+    if(tail == NULL){
+        cout<<"List is empty"<<endl;
+        return;
+    }
+
     Node* temp = tail;
     do{
         cout<<tail->data<<" ";
@@ -71,10 +77,15 @@ void deleteNode(Node* &tail, int value){
             curr = curr->next;
         }
 
-        prev->next = curr->next;
-        if(tail == curr){
+        //1 node linked list
+        if(curr == prev){
+            tail = NULL;
+        }
+        //>=2 node linked list
+        else if(tail == curr){
             tail = prev;
         }
+        prev->next = curr->next;
         curr->next = NULL;
         delete curr;
     }
@@ -86,18 +97,18 @@ int main()
     //5 element will be searched but hai hi ni toh doesn't matter, it'll insert as per the code
     insertNode(tail, 5, 3);  
     print(tail);
-    insertNode(tail, 3, 5);
-    print(tail);
-    insertNode(tail, 5, 7);
-    print(tail);
-    insertNode(tail, 7, 9);
-    print(tail);
-    insertNode(tail, 5, 6);
-    print(tail);
-    insertNode(tail, 9, 10);
-    print(tail);
-    insertNode(tail, 3, 4);
-    print(tail);
+    // insertNode(tail, 3, 5);
+    // print(tail);
+    // insertNode(tail, 5, 7);
+    // print(tail);
+    // insertNode(tail, 7, 9);
+    // print(tail);
+    // insertNode(tail, 5, 6);
+    // print(tail);
+    // insertNode(tail, 9, 10);
+    // print(tail);
+    // insertNode(tail, 3, 4);
+    // print(tail);
 
     deleteNode(tail, 3);
     print(tail);
