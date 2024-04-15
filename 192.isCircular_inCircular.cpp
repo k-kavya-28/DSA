@@ -91,14 +91,31 @@ void deleteNode(Node* &tail, int value){
     }
 }
 
+bool isCircularList(Node* &head){
+    //head pass kro ya tail same hi baat hai
+    if(head == NULL){
+        return true;
+    }
+    
+    //=1 and >1 node wala case is same only, you can dry run and see overlapping
+    Node* temp = head->next;
+    while(temp != NULL && temp != head){
+        temp = temp->next;
+    }
+    if(temp == head){
+        return true;
+    }
+    return false;
+}
+
 int main()
 {
     Node* tail = NULL;
     //5 element will be searched but hai hi ni toh doesn't matter, it'll insert as per the code
     insertNode(tail, 5, 3);  
     print(tail);
-    // insertNode(tail, 3, 5);
-    // print(tail);
+    insertNode(tail, 3, 5);
+    print(tail);
     // insertNode(tail, 5, 7);
     // print(tail);
     // insertNode(tail, 7, 9);
@@ -110,7 +127,14 @@ int main()
     // insertNode(tail, 3, 4);
     // print(tail);
 
-    deleteNode(tail, 3);
-    print(tail);
+    //deleteNode(tail, 3);
+    //print(tail);
+    
+    if(isCircularList(tail)){
+        cout<<"Circular"<<endl;
+    }
+    else{
+        cout<<"Not circular"<<endl;
+    }
     return 0;
 }
