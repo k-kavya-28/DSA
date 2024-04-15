@@ -168,4 +168,7 @@ int main()
 
 //LOGIC 2
 //can use map that stores key-value pairs
-//though it's bekar strategy as we are using space
+//though it's bekar strategy as we are using space so SC will become -> O(n)
+//map<Node*, bool>  it stores if a node is visited or not
+
+//HW-> read about Floyd's cycle detection algorithm - asked in interviews 70% prob
