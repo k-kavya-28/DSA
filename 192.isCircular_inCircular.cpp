@@ -138,3 +138,6 @@ int main()
     }
     return 0;
 }
+
+//TC -> O(n) as we are traversing all node once
+//SC -> O(1) as we are just making variables
