@@ -165,3 +165,7 @@ int main()
 
 //TC -> O(n) as we are traversing all node once
 //SC -> O(1) as we are just making variables
+
+//LOGIC 2
+//can use map that stores key-value pairs
+//though it's bekar strategy as we are using space
