@@ -24,3 +24,6 @@ public:
 };
 //TC -> O(n)
 //sc -> O(1)
+//HW - reverse Doubly LL
+//this code is done using iteration
+//see next code for recursion
