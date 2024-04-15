@@ -22,3 +22,5 @@ public:
         return slow;
     }
 };
+//TC -> O(n)
+//sc -> O(1)
