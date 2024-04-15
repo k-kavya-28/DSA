@@ -103,7 +103,22 @@ void print(Node* &head){
     cout<<endl;
 }
 
-
+bool isCircularList(Node* &head){
+    //head pass kro ya tail same hi baat hai
+    if(head == NULL){
+        return true;
+    }
+    
+    //=1 and >1 node wala case is same only, you can dry run and see overlapping
+    Node* temp = head->next;
+    while(temp != NULL && temp != head){
+        temp = temp->next;
+    }
+    if(temp == head){
+        return true;
+    }
+    return false;
+}
 
 int main()
 {   
@@ -137,6 +152,13 @@ int main()
 
     deleteNode(head, 3);
     print(head);
+
+    if(isCircularList(tail)){
+        cout<<"Circular"<<endl;
+    }
+    else{
+        cout<<"Not circular"<<endl;
+    }
 
     return 0;
 }
