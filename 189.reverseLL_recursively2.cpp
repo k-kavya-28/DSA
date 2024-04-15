@@ -19,3 +19,4 @@ public:
         return reverse2(head);        
     }
 };
+//in both the recursive solutions the TC and SC are both O(n)
