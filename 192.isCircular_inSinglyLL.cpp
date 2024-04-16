@@ -144,6 +144,31 @@ bool detectLoop(Node* head){
 // think if we can do SC -> O(1) H.W.
 //floyd's cycle detection algorithm
 
+//Floyd - TC is O(n) and SC is O(1)
+bool floydDetectLoop(Node* head){
+    if(head == NULL){
+        return NULL;
+    }
+
+    Node* slow = head;
+    Node* fast = head;
+
+    while(slow != NULL && fast != NULL){
+        fast = fast->next;
+        if(fast != NULL){
+            fast = fast->next;
+        }
+        slow = slow->next;
+
+        if(slow == fast){
+            cout<<"cycle is present at "<<slow->data <<endl;
+            return slow;
+        }
+    }
+    return NULL;
+}
+
+
 int main()
 {   
     //new node created
@@ -174,7 +199,7 @@ int main()
     cout << "head "<< head->data <<endl;
     cout<< "tail "<<tail-> data <<endl;
 
-    if(detectLoop(head)){
+    if(floydDetectLoop(head)){
         cout<<"Cycle detected"<<endl;
     }
     else{
