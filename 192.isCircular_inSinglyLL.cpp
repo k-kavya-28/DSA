@@ -130,6 +130,7 @@ bool detectLoop(Node* head){
     Node* temp = head;
     while(temp != NULL){
         if(visited[temp] == true){
+            cout<<"present on element "<<temp->data<<endl;
             return true;
         }
         visited[temp]=true;
@@ -137,6 +138,11 @@ bool detectLoop(Node* head){
     }
     return false;
 }
+
+//SC -> O(n) as map key-value is stored for every node
+//TC -> O(n) as the list is traversed 
+// think if we can do SC -> O(1) H.W.
+//floyd's cycle detection algorithm
 
 int main()
 {   
@@ -150,33 +156,45 @@ int main()
     Node* tail = node1; //tail is just like head also, since till now only one node is there so head and tail are same
     //we are keeping tail for our own benefit we are implementing it as if we had to insert at the end, it's though optional but it makes implementations easier
     print(head);
-    // insertAtHead(head, 12);
-    // print(head);
-    // insertAtHead(head, 15);
-    // print(head);
-
-    insertAtTail(tail, 12);
+    insertAtHead(head, 12);
     print(head);
-    insertAtTail(tail, 15);
+    insertAtHead(head, 15);
     print(head);
 
-    // insertAtPosition(head,tail,4, 22);
+    insertAtTail(tail, 22);
+    // print(head);
+    // insertAtTail(tail, 15);
+    print(head);
+
+    //checking loop code
+    tail->next = head->next;
+
+    //insertAtPosition(head,tail,4, 22);
     // print(head);
     cout << "head "<< head->data <<endl;
     cout<< "tail "<<tail-> data <<endl;
+
+    if(detectLoop(head)){
+        cout<<"Cycle detected"<<endl;
+    }
+    else{
+        cout<<"Cycle not detected"<<endl;
+    }
     
     // deleteNode(head, 1);
     // print(head);
 
-    deleteNode(head, 3);
-    print(head);
+    // deleteNode(head, 3);
+    // print(head);
 
+    /*
     if(isCircularList(tail)){
         cout<<"Circular"<<endl;
     }
     else{
         cout<<"Not circular"<<endl;
     }
+    */
 
     return 0;
 }
