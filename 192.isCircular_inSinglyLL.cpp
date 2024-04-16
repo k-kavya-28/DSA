@@ -145,7 +145,7 @@ bool detectLoop(Node* head){
 //floyd's cycle detection algorithm
 
 //Floyd - TC is O(n) and SC is O(1)
-bool floydDetectLoop(Node* head){
+Node* floydDetectLoop(Node* head){
     if(head == NULL){
         return NULL;
     }
@@ -166,6 +166,20 @@ bool floydDetectLoop(Node* head){
         }
     }
     return NULL;
+}
+
+
+Node* getStartingNode(Node* head){
+    if(head == NULL){
+        return NULL;
+    }
+    Node* intersection = floydDetectLoop(head);
+    Node* slow = head;
+    while(slow != intersection){
+        slow = slow->next;
+        intersection = intersection->next;
+    }
+    return slow;
 }
 
 
@@ -205,6 +219,8 @@ int main()
     else{
         cout<<"Cycle not detected"<<endl;
     }
+
+    cout<<"circular node at "<<getStartingNode(head)->data<<endl;
     
     // deleteNode(head, 1);
     // print(head);

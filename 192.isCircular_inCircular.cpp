@@ -1,4 +1,5 @@
 #include<iostream>
+#include<map>
 using namespace std;
 
 class Node{
@@ -125,6 +126,63 @@ bool detectLoop(Node* head){
     return false;
 }
 
+//Floyd - TC is O(n) and SC is O(1)
+Node* floydDetectLoop(Node* head){
+    if(head == NULL){
+        return NULL;
+    }
+
+    Node* slow = head;
+    Node* fast = head;
+
+    while(slow != NULL && fast != NULL){
+        fast = fast->next;
+        if(fast != NULL){
+            fast = fast->next;
+        }
+        slow = slow->next;
+
+        if(slow == fast){
+            cout<<"cycle is present at "<<slow->data <<endl;
+            return slow;
+        }
+    }
+    return NULL;
+}
+
+
+Node* getStartingNode(Node* head){
+    if(head == NULL){
+        return NULL;
+    }
+    Node* intersection = floydDetectLoop(head);
+    Node* slow = head;
+    while(slow != intersection){
+        slow = slow->next;
+        intersection = intersection->next;
+    }
+    return slow;
+}
+
+
+void removeLoop(Node* tail){
+    if(tail == NULL){
+        return;
+    }
+
+    Node* startOfLoop = getStartingNode(tail);
+    if(startOfLoop == NULL) {
+        // No loop detected, nothing to remove
+        return;
+    }
+    Node* temp = startOfLoop;
+    while(temp->next != startOfLoop){
+        temp = temp->next;
+    }
+    temp -> next = NULL;
+}
+
+
 int main()
 {
     Node* tail = NULL;
@@ -133,8 +191,12 @@ int main()
     print(tail);
     insertNode(tail, 3, 5);
     print(tail);
-    // insertNode(tail, 5, 7);
-    // print(tail);
+    insertNode(tail, 5, 7);
+    print(tail);
+    
+    removeLoop(tail);
+    print(tail);
+    
     // insertNode(tail, 7, 9);
     // print(tail);
     // insertNode(tail, 5, 6);
