@@ -15,5 +15,7 @@ int main()
     else{
         cout<<"stack is not empty!!"<<endl;
     }
+    
+    cout<<"size of stack is: "<<s.size()<<endl;
  return 0;
 }
