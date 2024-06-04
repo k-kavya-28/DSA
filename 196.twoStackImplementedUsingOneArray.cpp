@@ -62,4 +62,5 @@ public:
         }
         // Write your code here.
     }
+    //all done in O(1)
 };
