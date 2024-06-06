@@ -32,3 +32,6 @@ void sortStack(stack<int> &stack)
 
 	sortedInsert(stack, num);
 }
+
+//TC -> O(n2)
+//SC -> DIY, take care that the stack is passed by reference
