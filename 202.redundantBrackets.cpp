@@ -29,3 +29,5 @@ bool findRedundantBrackets(string &s)
     }
     return false;
 }
+
+//TC -> O(N)
