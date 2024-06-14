@@ -15,6 +15,7 @@ class node{
     }
 };
 
+//in this code we'll see building tree 1)using recursion 2)using level order
 node* buildTree(node* root){
     cout<<"enter data: "<<endl;
     int data;
@@ -68,15 +69,94 @@ void levelOrderTraversal(node* root){
 
 }
 
+
+void inorder(node *root){
+    //base case
+    if(root == NULL){
+        return;
+    }
+    inorder(root->left);
+    cout<<root->data<<" ";
+    inorder(root->right);
+}
+
+void preorder(node *root){
+    //base case
+    if(root == NULL){
+        return;
+    }
+    cout<<root->data<<" ";
+    preorder(root->left);
+    preorder(root->right);
+}
+
+void postorder(node *root){
+    //base case
+    if(root == NULL){
+        return;
+    }
+    postorder(root->left);
+    postorder(root->right);
+    cout<<root->data<<" ";
+}
+
+
+void buildFromLevelOrder(node* &root){
+    queue<node *> q;
+    cout<<"enter data for root"<<endl;
+    int data;
+    cin >> data;
+    root = new node(data);
+    q.push(root);
+
+    while(!q.empty()){
+        node* temp = q.front();
+        q.pop();
+
+        cout<<"enter left node for: "<<temp->data<<endl;
+        int leftData;
+        cin>>leftData;
+
+        if(leftData != -1){
+            temp->left = new node(leftData);
+            q.push(temp->left);
+        }
+
+
+        cout<<"enter right node for: "<<temp->data<<endl;
+        int rightData;
+        cin>>rightData;
+
+        if(rightData != -1){
+            temp->right = new node(rightData);
+            q.push(temp->right);
+        }
+    }
+}
+
+
 int main()
 {
     node* root = NULL;
+    buildFromLevelOrder(root);
+    levelOrderTraversal(root);
+    //1 3 5 7 11 17 -1 -1 -1 -1 -1 -1 -1
+
+    /*
     //creating a tree
     root = buildTree(root);
 
     //i/p string(to build tree) = 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
     cout<<"Printing the level order traversal output"<<endl;
     levelOrderTraversal(root);
+
+    cout<<"inorder traversal is: ";
+    inorder(root);
+    cout<<endl<<"preorder traversal is: ";
+    preorder(root);
+    cout<<endl<<"postorder traversal is: ";
+    postorder(root);
+    */
 
 
  return 0;
