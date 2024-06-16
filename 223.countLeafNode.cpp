@@ -19,3 +19,5 @@ int noOfLeafNodes(BinaryTreeNode<int> *root){
 
 
 }
+
+//TC -> O(n)
