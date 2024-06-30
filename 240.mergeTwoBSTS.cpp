@@ -9,6 +9,7 @@ void inorder(TreeNode* root, vector<int> &in){
 
 vector<int> mergeArr(vector<int> &a, vector<int> &b){
     int i=0, j=0, k=0;
+    //Using push_back dynamically or preallocating the vector size are two valid ways to fix the problem.
     vector<int> ans(a.size() + b.size());
     while(i<a.size() && j<b.size()){
         if(a[i]<b[j]){
