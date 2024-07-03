@@ -40,3 +40,5 @@ int largestBST(TreeNode * root){
     info temp = solve(root, maxSize);
     return maxSize;
 }
+
+//TC -> O(n)
