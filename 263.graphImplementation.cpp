@@ -43,6 +43,7 @@ int main()
     cin>>m;
 
     graph<int> g;
+    //int ki jgh char me thode boht aur changes krne pdenge code me
 
     for(int i=0; i<m; i++){
         int u, v;
