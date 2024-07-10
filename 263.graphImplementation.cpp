@@ -5,6 +5,8 @@
 #include<list>
 using namespace std;
 
+//we can use set in place of list for order
+
 template <typename T >
 
 class graph{
