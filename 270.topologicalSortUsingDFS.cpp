@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-void topoSort(int node, unordered_map<int, bool>& visited,
+void topoSort(int node, vector<bool>& visited,
 stack<int>& s, unordered_map<int, list<int> >& adj){
     visited[node] = 1;
 
@@ -26,7 +26,9 @@ vector<int> topologicalSort(vector<vector<int>> &edges, int v, int e)  {
     }
     
     //call dfs topological sort util function for all components
-    unordered_map<int, bool> visited;
+    //unordered_map<int, bool> visited;
+    //isko optimise krte hain as TLE aa rha h
+    vector<bool> visited(v);
     stack<int> s;
     for(int i=0; i<v; i++){
         if(!visited[i]){
@@ -43,5 +45,3 @@ vector<int> topologicalSort(vector<vector<int>> &edges, int v, int e)  {
 
     return ans;
 }
-
-//TLE aa rha hai
