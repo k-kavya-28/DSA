@@ -45,9 +45,11 @@ int detectCycleInDirectedGraph(int n, vector < pair < int, int >> & edges) {
         }
     }
 
-    if(cnt == n) 
+    if(cnt == n)
+        //cycle not present 
         return false;
     else{
+        //cycle present
         return true;
     }
 
