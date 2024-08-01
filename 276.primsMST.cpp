@@ -34,6 +34,7 @@ vector<pair<pair<int, int>, int>> calculatePrimsMST(int n, int m, vector<pair<pa
         int mini = INT_MAX;
         int u;
         //find the min wali node
+        //O(n) -> optimise 
         for(int k=1; k<=n; k++){
             if(mst[k] == false && key[k] < mini){
                 u = k;
