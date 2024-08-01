@@ -55,6 +55,7 @@ vector<pair<pair<int, int>, int>> calculatePrimsMST(int n, int m, vector<pair<pa
         }
     }
 
+    //parent array yahan tak ban chuka hai 
     vector<pair<pair<int, int>, int>> result;
     //0 hai nahi and 1 ka parent ni hai so 2 se chlaenge
     for(int i=2; i<=n; i++){
