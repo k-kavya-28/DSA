@@ -1,4 +1,4 @@
-//ye bas recursion smjhne k liye h TLE de rha 
+//ye bas recursion smjhne k liye h TLE de rha obv as isko DP me convert kr skte hain boht sare cases hai jo repeat kr rhe hain
 
 #include <bits/stdc++.h> 
 
