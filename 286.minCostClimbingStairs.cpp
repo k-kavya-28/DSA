@@ -69,7 +69,7 @@ public:
     int minCostClimbingStairs(vector<int>& cost) {
         //rec
         // int n = cost.size();
-        //it can be simplified the below line how?
+        //it can be simplified the below line how? sirf n-2 wale ko call kr rhe hain
         // int ans = min(solve(cost, n-1), solve(cost, n-2));
         // return ans;
 
