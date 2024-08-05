@@ -50,9 +50,24 @@ public:
 
     }
 
+    int solve4(vector<int> &cost, int n){
+        int prev2 = cost[0];
+        int prev1 = cost[1];
+        
+        for(int i=2; i<n; i++){
+            int curr = cost[i] + min(prev1, prev2);
+            prev2 = prev1;
+            prev1 = curr;
+        }
+
+        return min(prev1, prev2);
+
+    }
+
     int minCostClimbingStairs(vector<int>& cost) {
         //rec
         // int n = cost.size();
+        //it can be simplified the below line how?
         // int ans = min(solve(cost, n-1), solve(cost, n-2));
         // return ans;
 
@@ -64,7 +79,11 @@ public:
         // return ans;
 
         //II- tabulation
+        // int n = cost.size();
+        // return solve3(cost, n);
+
+        //III- space optimisation
         int n = cost.size();
-        return solve3(cost, n);
+        return solve4(cost, n);
     }
 };
